@@ -1,0 +1,21 @@
+VPN
+https://sso.pertanian.go.id
+User: konsulsimevi
+Pass: 1qazxsw2%$!(sjk
+
+VPN BIGIP (permanen akses, yang digunakan ini)
+datinhorti
+Dtn2014
+
+SERVER WEB SERVICE
+simevi.hortikultura.pertanian.go.id
+IP 10.15.11.71
+user:root
+Pass:1q2aw3zse4%$!(SJK2020
+Dir:/var/www/simevi.hortikultura.pertanian.go.id/public_html
+
+
+SERVER DB
+10.15.21.71/phpmyadmin
+user:simevi
+Pass:1qazxsw2%$!(sjk_simevi
