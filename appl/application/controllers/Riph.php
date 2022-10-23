@@ -50,7 +50,7 @@ class Riph extends CI_Controller{
 	
 	$this->data['get_jml_verifikasi'] = $this->r_verifikasi->get_jml_r_verifikasi();
 
-	$this->data['no_riph'] = [
+	  $this->data['no_riph'] = [
       'name'          => 'no_riph',
       'id'            => 'no_riph',
       'class'         => 'form-control',

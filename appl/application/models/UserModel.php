@@ -76,6 +76,17 @@ class UserModel extends CI_Model {
  		return $res['name'];
   	}
 
+	  public function GetCompanyName($id)
+	  {  
+		   $this->db->select('id_users,nama_perusahaan');
+		  $this->db->from($this->User);
+		  $this->db->where("id_users",$id);
+		  $this->db->limit(1);
+			$query = $this->db->get();
+		  $res = $query->row_array();
+		   return $res['nama_perusahaan'];
+		}
+
 	public function GetIDByName($name)
 	{  
  		$this->db->select('id_users,name');

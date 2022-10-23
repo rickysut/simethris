@@ -32,6 +32,14 @@ class Riph_model extends CI_Model{
     return $this->db->get($this->table)->result();
   }
 
+  function get_all_riph_by_user($userid)
+  {
+    $this->db->where('mst_riph.is_active', '1');
+    $this->db->where('mst_riph.id_users', $userid);
+    $this->db->order_by('mst_riph.id_mst_riph', 'ASC');
+    return $this->db->get($this->table)->result();
+  }
+
   function get_all_combobox()
   {
     $this->db->order_by('name');
@@ -168,6 +176,16 @@ class Riph_model extends CI_Model{
   {
     $this->db->where($this->id, $id);
     $this->db->delete($this->table2);
+  }
+
+  function getNomorRiph($userid, $mstid)
+  {
+    $this->db->select('nomor_riph');
+    $this->db->where('mst_riph.is_active', '1');
+    $this->db->where('mst_riph.id_users', $userid);
+    $this->db->where('mst_riph.id_mst_riph', $mstid);
+    return $this->db->get($this->table)->row();
+
   }
 
 }

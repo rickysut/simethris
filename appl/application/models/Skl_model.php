@@ -13,4 +13,9 @@ class Skl_model extends CI_Model
     $this->db->select('tbl_skl.*');
     return $this->db->get($this->table)->result();
   }
+
+  function insert($data)
+  {
+    $this->db->insert($this->table, $data);
+  }
 }

@@ -13,7 +13,8 @@
                 } ?>
             </div>
             <!-- Page Content -->
-            <form class="" action="submit">
+            <?php echo form_open_multipart($action) ?>
+		    <?php echo validation_errors() ?>
                 <div class="page-content p-3">
                     <div class="col-12">
                         <div class="card">
@@ -25,34 +26,40 @@
                                     <div class="form-group col-lg-6">
                                         <select name="nomor_riph" id="nomor_riph" class="form-control" autocomplete="off" value="">
                                             <option value="" hidden>- pilih no. RIPH</option>
-                                            <option value="">Query seluruh nomor riph</option>
-                                            <option value="">Query seluruh nomor riph</option>
-                                            <option value="">Query seluruh nomor riph</option>
-                                            <option value="">Query seluruh nomor riph</option>
+                                            <?php foreach($riph_data as $data) { ?>
+                                                <option value="<?= $data->id_mst_riph ?>"><?= $data->nomor_riph ?></option>
+                                            <?php } ?>
+                                            
+                                            
                                         </select>
                                         <small id="provinsiHelpBlock" class="form-text text-muted">Silahkan pilih nomor riph yang sesuai.</small>
                                     </div>
                                     <div class="form-group col-lg-6">
-                                        <input id="id_skl' type=" text" class="form-control" placeholder="Nomor Surat SKL" />
+                                        <?php echo form_input($id_skl) ?>
                                         <small id="provinsiHelpBlock" class="form-text text-muted">Silahkan masukkan nomor SKL.</small>
                                     </div>
                                     <div class="form-group col-lg-6">
-                                        <input id="tgl_terbit" type="date" class="form-control" placeholder="tgl_terbit" />
+                                        <?php echo form_input($tgl_terbit) ?>
                                         <small id="provinsiHelpBlock" class="form-text text-muted">Silahkan masukkan nomor SKL.</small>
                                     </div>
                                     <div class="form-group col-lg-6">
-                                        <input id="file_skl" type="file" class="form-control" placeholder="Nomor Surat SKL" />
-                                        <small id="provinsiHelpBlock" class="form-text text-muted">Silahkan masukkan nomor SKL.</small>
+                                        <?php echo form_input($file_skl) ?>
+                                        <small id="provinsiHelpBlock" class="form-text text-muted">Silahkan pilih file.</small>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <a href="Simpan" class="btn btn-primary fuse-ripple-ready"><i class="fa fa-save mr-1"></i>Simpan</a>
-                            </div>
+                                <div class="container">
+                                    <div class="btn-group" role="group" aria-label="Default button group">
+                                        <button class="btn btn-primary" type="submit"><i class="icon-content-save"></i> <?php echo $btn_submit ?></button>
+                                        <button class="btn btn-primary" type="reset"><i class="icon-loop"></i> <?php echo $btn_reset ?></button>
+                                    </div>
+                                </div>
+						    </div>
                         </div>
                     </div>
                 </div>
-            </form>
+            <?php echo form_close() ?>
         </div>
     </div>
     <?php $this->load->view('back/template/footer'); ?>

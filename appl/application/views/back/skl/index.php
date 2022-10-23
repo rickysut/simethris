@@ -34,17 +34,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th>
-                                            <a href="<?php echo $edit_action ?>" class="badge btn-sm btn-info" action="edit_action" role="button" title="Edit/Ubah"><i class="fa fa-edit"></i></a>
-                                            <a class="badge btn-sm btn-danger" action="delete" role="button" title="Hapus"><i class="fa fa-trash"></i></a>
-                                        </th>
-                                    </tr>
+                                    <?php foreach($skl_data as $data){ ?>
+                                        <tr>
+                                            <th><?= $data->qrcode ?></th>
+                                            <th><?= $data->nomor_riph ?></th>
+                                            <th><?= $data->nama_perusahaan ?></th>
+                                            <th><?= $data->tgl_terbit ?></th>
+                                            <th><?= $data->file ?></th>
+                                            <th>
+                                                <a href="<?php echo $edit_action ?>" class="badge btn-sm btn-info" action="edit_action" role="button" title="Edit/Ubah"><i class="fa fa-edit"></i></a>
+                                                <a class="badge btn-sm btn-danger" action="delete" role="button" title="Hapus"><i class="fa fa-trash"></i></a>
+                                            </th>
+                                        </tr>
+
+                                    <?php } ?>
+                                    
                                 </tbody>
                             </table>
                         </div>
