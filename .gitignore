@@ -1,2 +1,4 @@
 /.DS_Store
 /.ftpquota
+update/*
+appl/application/vendor/*

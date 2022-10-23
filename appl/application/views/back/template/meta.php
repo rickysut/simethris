@@ -108,31 +108,25 @@
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/node_modules/chart.js/dist/Chart.min.css" />
     <!-- Perfect Scrollbar -->
     <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/node_modules/perfect-scrollbar/css/perfect-scrollbar.css" />
-	<!--script type="text/css" rel="stylesheet" src="<?php echo base_url() ?>assets/node_modules/datatables-bs/css/dataTables.bootstrap.min.css"></script-->
     <!-- Fuse Html -->
     <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/fuse-html/fuse-html.min.css" />
     <!-- Main CSS -->
     <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/css/main.css?v=1.01">
     <!-- / STYLESHEETS -->
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/plugins/') ?>font-awesome/css/font-awesome.min.css">
-	<!--
-	<link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/node_modules/') ?>bootstrap/dist/css/bootstrap.min.css">
-		
-	<link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/plugins/') ?>datatables-net/DataTables-1.10.20/css/dataTables.bootstrap.min.css">
-	-->
+
+
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/plugins/') ?>datatables-net/datatables.min.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/plugins/') ?>datatables-net/Buttons-1.6.1/css/buttons.dataTables.min.css"/>
+	
     <!-- JAVASCRIPT -->
 
-  	<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script-->
-  	<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script-->
-
-
+  	
     <!-- jQuery -->
     <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/jquery-ui/jquery-ui.min.js"></script>
 	
-	<!-- ajaxfileupload 
-	<script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/fileupload/ajaxfileupload.js"></script>
-    -->
+	
 	<!-- Mobile Detect -->
     <script type="text/javascript" src="<?php echo base_url() ?>assets/node_modules/mobile-detect/mobile-detect.min.js"></script>
     
@@ -157,26 +151,9 @@
 	-->
 	<script type="text/javascript" src="<?php echo base_url() ?>assets/node_modules/datatables.net/DataTables-1.10.20/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url() ?>assets/node_modules/datatables.net/DataTables-1.10.20/js/dataTables.bootstrap.js"></script>
- 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/plugins/') ?>datatables-net/datatables.min.css"/>
-	<!--
-		
-	<script type="text/javascript" src="<?php echo base_url('assets/node_modules/') ?>datatables.net/DataTables-1.10.20/js/jquery.dataTables.min.js"></script>
-	-->
-	<script src="<?php echo base_url('assets/plugins/') ?>datatables/js/jquery.dataTables.min.js"></script>
-	<!--
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-	<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+	 
 	
-
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css"/>
-	-->
-	<!--
-
-	<script src="<?php echo base_url('assets/plugins/') ?>datatables-net/DataTables-1.10.20/js/dataTables.bootstrap.min.js"></script>
-	-->
+	
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 	 <!-- PNotify -->
