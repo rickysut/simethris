@@ -164,26 +164,26 @@ class Poktan extends CI_Controller{
     is_login();
     is_update();
 
-    $this->data['user']     = $this->poktan_model->get_by_id($id);
-	$this->data['listuri']     = 'poktan';
+    $this->data['user']         = $this->poktan_model->get_by_id($id);
+	  $this->data['listuri']      = 'poktan';
     if($this->data['user'])
     {
       $this->data['page_title'] = 'Update Data '.$this->data['module'];
       $this->data['action']     = 'poktan/update_action';
       $this->data['get_all_combobox_provinsi'] = $this->m_wilayah->get_all_provinsi2();
-	  $this->data['id_poktan'] = [
-      'name'          => 'id_poktan',
-      'id'            => 'id_poktan',
-      'class'         => 'form-control',
-      'autocomplete'  => 'off',
-		  'type'  => 'hidden',
-    ];
-	  $this->data['no_poktan'] = [
-      'name'          => 'no_poktan',
-      'id'            => 'no_poktan',
-      'class'         => 'form-control',
-      'autocomplete'  => 'off',
-    ];
+	    $this->data['id_poktan'] = [
+        'name'          => 'id_poktan',
+        'id'            => 'id_poktan',
+        'class'         => 'form-control',
+        'autocomplete'  => 'off',
+        'type'  => 'hidden',
+      ];
+      $this->data['no_poktan'] = [
+        'name'          => 'no_poktan',
+        'id'            => 'no_poktan',
+        'class'         => 'form-control',
+        'autocomplete'  => 'off',
+      ];
 	$this->data['nama_poktan'] = [
       'name'          => 'nama_poktan',
       'id'            => 'nama_poktan',

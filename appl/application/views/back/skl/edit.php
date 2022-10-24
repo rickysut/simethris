@@ -7,13 +7,14 @@
         <div class="doc data-table-doc page-layout simple full-width">
             <!-- Page HEADER -->
             <div class="page-header bg-primary text-auto p-6 row no-gutters align-items-center justify-content-between">
-                <h1 class="doc-title h4" id="content">Tambah SKL</h1>
+                <h1 class="doc-title h4" id="content"><?php echo $page_title ?></h1>
                 <?php if ($this->session->flashdata('message')) {
                     echo $this->session->flashdata('message');
                 } ?>
             </div>
             <!-- Page Content -->
-            <form class="" action="submit">
+            <?php echo form_open_multipart($action.'/'.$skl_data->id_skl) ?>
+		    <?php echo validation_errors() ?>
                 <div class="page-content p-3">
                     <div class="col-12">
                         <div class="card">
@@ -25,49 +26,48 @@
                                     <div class="form-group col-lg-6">
                                         <select name="nomor_riph" id="nomor_riph" class="form-control" autocomplete="off" value="">
                                             <option value="" hidden>- pilih no. RIPH</option>
-                                            <option value="">Query seluruh nomor riph</option>
-                                            <option value="">Query seluruh nomor riph</option>
-                                            <option value="">Query seluruh nomor riph</option>
-                                            <option value="">Query seluruh nomor riph</option>
+                                            <?php foreach($riph_data as $data) { 
+                                                $option ='<option value="'.$data->id_mst_riph.'" '.($data->id_mst_riph == $skl_data->id_mst_riph ? 'selected="selected"' :'').'>'.$data->nomor_riph.'</option>'; 
+                                                echo $option; 
+                                            } ?>
+                                            
+                                            
                                         </select>
                                         <small id="provinsiHelpBlock" class="form-text text-muted">Silahkan pilih nomor riph yang sesuai.</small>
                                     </div>
                                     <div class="form-group col-lg-6">
-                                        <input id="id_skl' type=" text" class="form-control" placeholder="Nomor Surat SKL" />
+                                        <?php echo form_input($no_skl, $skl_data->no_skl) ?>
                                         <small id="provinsiHelpBlock" class="form-text text-muted">Silahkan masukkan nomor SKL.</small>
                                     </div>
                                     <div class="form-group col-lg-6">
-                                        <input id="tgl_terbit" type="date" class="form-control" placeholder="tgl_terbit" />
+                                        <?php echo form_input($tgl_terbit, $skl_data->tgl_terbit) ?>
                                         <small id="provinsiHelpBlock" class="form-text text-muted">Silahkan masukkan nomor SKL.</small>
                                     </div>
                                     <div class="form-group col-lg-6">
-                                        <input id="file_skl" type="file" class="form-control" placeholder="Nomor Surat SKL" />
-                                        <small id="provinsiHelpBlock" class="form-text text-muted">Silahkan masukkan nomor SKL.</small>
+                                        <?php echo form_input($file_skl) ?>
+                                        <small id="provinsiHelpBlock" class="form-text text-muted"><?php echo $skl_data->file ?></small>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <a href="Simpan" class="btn btn-primary fuse-ripple-ready"><i class="fa fa-save mr-1"></i>Simpan</a>
-                            </div>
+                                <div class="container">
+                                    <div class="btn-group" role="group" aria-label="Default button group">
+                                        <button class="btn btn-primary" type="submit"><i class="icon-content-save"></i> <?php echo $btn_submit ?></button>
+                                        <button onclick="history.back()" class="btn btn-primary" type="reset"><i class="icon-loop"></i> CANCEL </a>
+                                    </div>
+                                </div>
+						    </div>
                         </div>
                     </div>
                 </div>
-            </form>
+            <?php echo form_close() ?>
         </div>
     </div>
     <?php $this->load->view('back/template/footer'); ?>
     <div class="quick-panel-sidebar custom-scrollbar" fuse-cloak data-fuse-bar="quick-panel-sidebar" data-fuse-bar-position="right">
         <?php $this->load->view('back/template/quickpanel'); ?>
     </div>
-    <script type="text/javascript" src="<?php echo base_url() ?>assets/node_modules/datatables.net/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" src="<?php echo base_url() ?>assets/node_modules/datatables-responsive/js/dataTables.responsive.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#sklList').DataTable({
-                "responsive": 'true',
-            });
-        });
-    </script>
+    
 </div>
 
 </body>

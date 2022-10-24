@@ -36,14 +36,14 @@
                                 <tbody>
                                     <?php foreach($skl_data as $data){ ?>
                                         <tr>
-                                            <th><?= $data->qrcode ?></th>
+                                            <th><?= $data->no_skl ?></th>
                                             <th><?= $data->nomor_riph ?></th>
                                             <th><?= $data->nama_perusahaan ?></th>
                                             <th><?= $data->tgl_terbit ?></th>
                                             <th><?= $data->file ?></th>
                                             <th>
-                                                <a href="<?php echo $edit_action ?>" class="badge btn-sm btn-info" action="edit_action" role="button" title="Edit/Ubah"><i class="fa fa-edit"></i></a>
-                                                <a class="badge btn-sm btn-danger" action="delete" role="button" title="Hapus"><i class="fa fa-trash"></i></a>
+                                                <a href="<?php echo base_url('skl/edit/'.$data->id_skl) ?>" class="badge btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                                                <a href="<?php echo base_url('skl/delete/'.$data->id_skl) ?>" onclick="return confirm('Are you sure?')" class="badge btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                                             </th>
                                         </tr>
 

@@ -35,7 +35,7 @@
                                         <small id="provinsiHelpBlock" class="form-text text-muted">Silahkan pilih nomor riph yang sesuai.</small>
                                     </div>
                                     <div class="form-group col-lg-6">
-                                        <?php echo form_input($id_skl) ?>
+                                        <?php echo form_input($no_skl) ?>
                                         <small id="provinsiHelpBlock" class="form-text text-muted">Silahkan masukkan nomor SKL.</small>
                                     </div>
                                     <div class="form-group col-lg-6">
@@ -66,15 +66,7 @@
     <div class="quick-panel-sidebar custom-scrollbar" fuse-cloak data-fuse-bar="quick-panel-sidebar" data-fuse-bar-position="right">
         <?php $this->load->view('back/template/quickpanel'); ?>
     </div>
-    <script type="text/javascript" src="<?php echo base_url() ?>assets/node_modules/datatables.net/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" src="<?php echo base_url() ?>assets/node_modules/datatables-responsive/js/dataTables.responsive.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#sklList').DataTable({
-                "responsive": 'true',
-            });
-        });
-    </script>
+    
 </div>
 
 </body>
