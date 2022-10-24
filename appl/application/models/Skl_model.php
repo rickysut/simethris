@@ -15,6 +15,14 @@ class Skl_model extends CI_Model
     return $this->db->get($this->table)->result();
   }
 
+  function get_all_user($id_user)
+  {
+    $this->db->select('tbl_skl.*');
+    $this->db->where('is_delete', '0');
+    $this->db->where('user_id', $id_user);
+    return $this->db->get($this->table)->result();
+  }
+
   function insert($data)
   {
     $this->db->insert($this->table, $data);

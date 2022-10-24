@@ -28,14 +28,18 @@ class Skl extends CI_Controller
         $this->data['edit_action'] = base_url('skl/edit');
         $this->data['delete_action'] = base_url('skl/delete');
         $this->data['page_title'] = 'Daftar ' . $this->data['module'];
-        $this->data['skl_data'] = $this->SKL_model->get_all();
+        if(is_superadmin()){
+            $this->data['skl_data'] = $this->SKL_model->get_all();
+        } else {
+            $this->data['skl_data'] = $this->SKL_model->get_all_user($this->session->id_users);
+        }    
         $this->load->view('back/skl/index', $this->data);
     }
 
     public function add()
     {
         is_login();
-        is_read();
+        is_create();
 
         $this->data['page_title']   = 'Tambah ' . $this->data['module'];
         $this->data['action']       = 'skl/store';
@@ -77,7 +81,7 @@ class Skl extends CI_Controller
     public function edit($id_skl)
     {
         is_login();
-        is_read();
+        is_update();
 
         $this->load->model('SKL_model');
         $this->load->model('r_verifikasi');
